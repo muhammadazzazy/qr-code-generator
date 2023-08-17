@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+:root {
+    --baseColor: #606468;
+}
+.grid {
+    inline-size: 90%;
+    margin-inline: auto;
+    max-inline-size: 20rem;
+    display: grid;
+}
+
+.hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.icon {
+    block-size: 1em;
+    display: inline-block;
+    fill: var(--iconFill);
+    inline-size: 1em;
+    vertical-align: middle;
+}
+
+:root {
+    --htmlFontSize: 100%;
+
+    --bodyBackgroundColor: #2c3338;
+    --bodyColor: var(--baseColor);
+    --bodyFontFamily: "Open Sans";
+    --bodyFontFamilyFallback: sans-serif;
+    --bodyFontSize: 0.875rem;
+    --bodyFontWeight: 400;
+    --bodyLineHeight: 1.5;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: var(--htmlFontSize);
+}
+
+body {
+    background-color: #342d34;
+    color: white;
+    font-family: var(--bodtFontFamily);
+    font-size: var(--bodyFontSize);
+    font-weight: var(--bodyFontWeight);
+    line-height: var(--bodyLineHeight);
+    margin: 0;
+    min-block-size: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+:root {
+    --anchorColor: #eee;
+}
+
+a {
+    color: var(--anchorColor);
+    outline: 0;
+    text-decoration: none;
+}
+
+a:focus,
+a:hover {
+    text-decoration: underline;
+}
+
+:root {
+    --formGap: 0.875rem;
+}
+
+input {
+    background-image: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+textarea {
+    background-image: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+textarea,
+select,
+option,
+input[type="submit"] {
+    inline-size: 100%;
+}
+
+:root {
+    --loginBorderRadius: 0.25rem;
+    --loginColor: #eee;
+
+    --loginInputBackgroundColor: #3b4148;
+    --loginInputHoverBackgroundColor: #434a52;
+
+    --loginLabelBackgroundColor: #363b41;
+
+    --loginSubmitBackgroundColor: #ea4c88;
+    --loginSubmitColor: #eee;
+    --loginSubmitHoverBackgroundColor: #d44179;
+}
+
+.login {
+
+}
+
+textarea,
+select,
+option,
+textarea,
+input[type="submit"] {
+border-radius: var(--loginBorderRadius);
+padding: 1rem;
+}
+
+textarea,option,select {
+    background-color: var(--loginInputBackgroundColor);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+textarea:focus,
+textarea:hover {
+    background-color: var(--loginInputHoverBackgroundColor);
+}
+
+input[type="submit"] {
+background-color: #d75821;
+color: var(--loginSubmitColor);
+font-weight: 700;
+text-transform: uppercase;
+}
+
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+    background-color: #d75821;
+}
+
+p
+{
+    margin-block: 1.5rem;
+    text-align: center;
+}
+
+img
+{
+max-width: 100%;
+max-height: 100%;
+}
+    </style>
+</head>
+<body>
+    <!-- <script type="text/javascript" src="script.js"></script> -->
+    <script type="text/javascript">
+        function genQR()
+        {
+            // var gapi="https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=welcome";
+            var gpai="https://chart.googleapis.com/chart?chf=bg,s,65432100&cht=qr&chs=";
+            var myimg=document.getElementById("img");
+            var mytext=document.getElementById("qrtext").value;
+            var mysize=document.getElementById("size").value;
+
+            if (mytext!="" && mysize=="100")
+            {
+                myimg.src=gpai+"100x100"+"&chl="+mytext;
+                // https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=hello
+            }
+
+            else if(mytext!="" && mysize=="150")
+            {
+                myimg.src=gpai+"150x150"+"&chl="+mytext;
+            }
+
+            else if(mytext!="" && mysize=="200")
+            {
+                myimg.src=gpai+"200x200"+"&chl="+mytext;
+            }
+
+            else if (mytext!="" && mysize=="250")
+            {
+                myimg.src=gpai+"250x250"+"&chl="+mytext;
+            }
+
+            else if (mytext!="" && mysize=="300")
+            {
+                myimg.src=gpai+"300x300"+"&chl="+mytext;
+            }
+
+            else
+            {
+                alert("Please Enter Text");
+            }
+        }
+        // alert("Hello World");
+        // function showIt()
+        // {
+            // alert("Hello World");
+            // alert(document.getElementById("atext").value);
+            // var myalert = document.getElementById("atext").value;
+            // var myalert = document.getElementById("atext").innerHTML;
+            // var myalert = document.getElementById("atext").src;
+            // alert(myalert);
+            // document.getElementById("atext").innerHTML = "Changed Text";
+            // document.getElementById("atext").src = "google.com/images/branding/1x/googlelogo_color_272x92dp.png";
+            // var theimg=document.getElementById("myimage");
+            // var thetext=document.getElementById("myoption").value;
+            // if(thetext=="Google")
+
+            // {
+            //     theimg.src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png";
+            // }
+
+            // else if(thetext=="Bing")
+
+            // {
+            //     theimg.src="https://res.cloudinary.com/equities-com/image/upload/v1/contributor_46980/Screenshot_2021-02-01_at_00_opt";
+            // }
+
+            // else if(thetext=="Yahoo")
+            
+            // {
+            //     theimg.src="https://1000logos.net/wp-content/uploads/2017/05/Yahoo-logo-500x333.png";
+            // }
+
+            // else
+
+            // {
+            //     alert("Picture Not Available");
+            // }
+            // }
+    </script>
+    <div class="grid">
+        <h2 align="center">Qr Code Generator</h2>
+        <center>
+            <img src="" id="img"></center>
+        
+        <select id="size">
+            <option value="100">100x100</option>
+            <option value="150">150x150</option>
+            <option value="200">200x200</option>
+            <option value="250" selected>250x250</option>
+            <option value="300">300x300</option>
+        </select>
+        <br><br>
+        <textarea placeholder="Enter Your Text" id="qrtext"></textarea>
+        <input type="submit" value="Generate" onclick="genQR()">
+
+        <p>Developed By Muhammad Azzazy</p>
+    </div>
+    <!-- <input type="text" id="atext"> -->
+    <!-- <textarea id="atext" rows="10" cols="20"></textarea> -->
+    <!-- <p id="atext">Hello World</p> -->
+    <!-- <div id="atext">Hello World</div> -->
+    <!-- <select id="atext">
+        <option value="one">One</option>
+        <option value="two">Two</option>
+    </select> -->
+    <!-- <img id="atext" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"> -->
+    <!-- <p id="atext">Hello World</p> -->
+    <!-- <div id="atext">Hello World</div> -->
+    <!-- <img src="" id="atext"> -->
+    <!-- <img src="" id="myimage">
+    <select id="myoption">
+        <option>Google</option>
+        <option>Bing</option>
+        <option>Yahoo</option>
+        <option>Facebook</option>
+    </select>
+    <input type="submit" value="Click Me" onclick="showIt()"> -->
+</body>
+</html>
